@@ -5,7 +5,12 @@ function $(arg){
 
 function Laputa(arg){
     this.elements=[];
-    this.checkDom(arg);
+    if(typeof(arag)==='object'){
+        this.elements[0]=arg;
+    }else{
+        this.checkDom(arg);
+    }
+
 }
 
 Laputa.prototype.checkDom=function(arg){
@@ -30,6 +35,18 @@ Laputa.prototype.checkDom=function(arg){
         case 'object':
             this.elements.push(arg);
     }
+};
+
+Laputa.prototype.find=function(tar){
+    var arrTemp=[];
+    for(var x=0;x<this.elements.length;x++){
+        var domTemp=this.elements[x].querySelectorAll(tar);
+        for(var y=0;y<domTemp.length;y++){
+            arrTemp.push(domTemp[y])
+        }
+    }
+    this.elements=arrTemp;
+    return this;
 };
 
 Laputa.prototype.show=function(){
@@ -70,12 +87,29 @@ Laputa.prototype.click=function(fn){
   return this;
 };
 
-Laputa.prototype.mouseover=function(fn){
-  for(var x=0;x<this.elements.length;x++){
-      addEvent(this.elements[x],'mouseover',fn);
-  }
+Laputa.prototype.html=function(oV){
+
+    for(var x=0;x<this.elements.length;x++){
+        if(arguments.length===0){
+            return this.elements[x].innerHTML;
+        }else{
+            this.elements[x].innerHTML=oV;
+        }
+    }
+    return this;
 };
 
+Laputa.prototype.hover=function(fn){
+    if(arguments.length===2){
+        for(var x=0;x<this.elements.length;x++){
+            addEvent(this.elements[x],'mouseover',arguments[0]);
+            addEvent(this.elements[x],'mouseout',arguments[1]);
+        }
+    }else{
+        return ;
+    }
+    return this;
+};
 
 
 function setCss(obj,oS,oV){
