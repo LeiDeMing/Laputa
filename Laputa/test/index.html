@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #oUl{width:300px;}
+    </style>
+    <script type="text/javascript" src="../src/laputa.js"></script>
+</head>
+<body>
+    <div>
+        <ul id="oUl">
+            <li class="oLi">测试</li>
+            <li class="oLi">测试</li>
+            <li class="oLi">测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+//    $('#oUl').css({'width':'200px','height':'300px','background':'gold'});
+    $('#oUl').css('background','red').click(function(){
+//        $(this)
+        console.log(this);
+    });
+
+</script>
