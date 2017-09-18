@@ -16,37 +16,20 @@
     <div>
         <div id="topBar" class="topBar">TopBar</div>
         <ul class="nav" id="nav">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li class="hover active"></li>
+            <li class="hover active"></li>
+            <li class="hover active"></li>
+            <li class="hover active"></li>
         </ul>
     </div>
+    <div class="show" id="show"></div>
+    <div class="show" id="show2"></div>
 </body>
 </html>
 <script type="text/javascript">
-//    window.onload=function(){
-//        flag=true;
-//        $(document).scrollTop(0);
-//    };
-//
-//    window.onscroll=function(){
-//        var scroll=document.documentElement.scrollTop || document.body.scrollTop;
-//
-//        if(scroll>140){
-//            if(!flag){
-//                flag=true;
-//                $('#nav').css({'position':'fixed','top':'0'});
-//            }
-//        }else{
-//            if(flag){
-//                flag=false;
-//                $('#nav').css({'position':'static'});
-//            }
-//
-//        }
-//    }
+    $('#show').css({'width':'300px','height':'300px','background':'red'}).center().drag();
+    $('#show2').css({'width':'200px','height':'200px','background':'black'}).center().drag();
 
-    var oIndex=$('li').eq(2).index();
-    console.log(oIndex);
+//    console.log($('#show2').__proto__);
+
 </script>
