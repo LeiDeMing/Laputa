@@ -71,7 +71,6 @@ Laputa.prototype.css=function(attr,value){
             }
         }else{
             if(arguments.length===1){
-                console.log(getStyle(this.elements[x],arguments[0]));
             }else{
                 setCss(this.elements[x],attr,value);
             }
@@ -97,6 +96,57 @@ Laputa.prototype.html=function(oV){
         }
     }
     return this;
+};
+
+Laputa.prototype.scrollTop=function(scro){
+  if(this.elements[0]===document){
+      if(arguments.length===0){
+        return document.documentElement.scrollTop;
+      }else{
+          document.documentElement.scrollTop=scro;
+      }
+  }else{
+      if(arguments===0){
+          return this.elements[0].scrollTop;
+      }else{
+          this.scrollTop=scro;
+      }
+  }
+};
+
+Laputa.prototype.first=function(){
+    var oThis=[];
+    this.elements=this.elements[0];
+    oThis.push(this.elements);
+    this.elements=oThis;
+    return this;
+};
+
+Laputa.prototype.last=function(){
+    var oThis=[];
+    this.elements=this.elements[this.elements.length-1];
+    oThis.push(this.elements);
+    this.elements=oThis;
+    return this;
+};
+
+Laputa.prototype.eq=function(num){
+    var oThis=[];
+    this.elements=this.elements[num];
+    oThis.push(this.elements);
+    this.elements=oThis;
+    return this;
+};
+
+Laputa.prototype.index=function(){
+    var current=this.elements[0];
+    var allChild=current.parentNode.children;
+    for(var x=0;x<allChild.length;x++){
+        if(current===allChild[x]){
+            return x;
+        }
+    }
+    return null;
 };
 
 Laputa.prototype.hover=function(fn){

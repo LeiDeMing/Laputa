@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        #oUl{width:300px;}
+        body{height:4000px;}
+        *{margin:0;padding:0;}
+        .topBar{width:100%;height:140px;}
+        .nav{width:100%;height:100px;background:skyblue;}
+        .nav li{width:100%;float:left;border-bottom:1px solid black;}
     </style>
     <script type="text/javascript" src="../src/laputa.js"></script>
 </head>
 <body>
     <div>
-        <ul id="oUl">
-            <li class="oLi">测试
-                <ul>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                </ul>
-            </li>
-            <li class="oLi">测试
-                <ul>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                </ul>
-            </li>
-            <li class="oLi">测试
-                <ul>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                    <li class="more">哈哈哈哈</li>
-                </ul>
-            </li>
-            <li>测试</li>
-            <li>测试</li>
-            <li>测试</li>
+        <div id="topBar" class="topBar">TopBar</div>
+        <ul class="nav" id="nav">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
 </body>
 </html>
 <script type="text/javascript">
-    $('.oLi').html('hahahahahahaha');
+//    window.onload=function(){
+//        flag=true;
+//        $(document).scrollTop(0);
+//    };
+//
+//    window.onscroll=function(){
+//        var scroll=document.documentElement.scrollTop || document.body.scrollTop;
+//
+//        if(scroll>140){
+//            if(!flag){
+//                flag=true;
+//                $('#nav').css({'position':'fixed','top':'0'});
+//            }
+//        }else{
+//            if(flag){
+//                flag=false;
+//                $('#nav').css({'position':'static'});
+//            }
+//
+//        }
+//    }
 
+    var oIndex=$('li').eq(2).index();
+    console.log(oIndex);
 </script>
